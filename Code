@@ -1,0 +1,13 @@
+function kirimKeGAS(barcode) {
+    const urlGAS = "https://script.google.com/macros/s/AKfycbxDZ6F6_iB4IzLsfRCspqgrwfxDu1Unff-3a0dxcNpa4ySMLaWHKxt8CPAUxmuOkOVgKw/exec";
+    
+    fetch(urlGAS, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ barcode: barcode })
+    }).then(() => {
+        alert("Data berhasil dikirim ke Sheets!");
+    }).catch(err => console.log(err));
+}
